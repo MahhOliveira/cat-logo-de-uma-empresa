@@ -1,0 +1,31 @@
+//funcao para calcular descontos em um catálogo
+
+def calculate_discount(item1, item2, item3):
+  # Calculate the total price of individual items
+  total_price = item1 + item2 + item3
+  
+  # Calculate the price of each combo pack
+  combo1 = item1 + item2 - (item1 + item2) * 0.1
+  combo2 = item2 + item3 - (item2 + item3) * 0.1
+  combo3 = item1 + item3 - (item1 + item3) * 0.1
+  combo4 = item1 + item2 + item3 - (item1 + item2 + item3) * 0.25
+  
+  # Calculate the total price with discounts
+  total_price_with_discount = min(combo1, combo2, combo3, combo4)
+  
+  # Calculate the discount amount
+  discount = total_price - total_price_with_discount
+  
+  return discount
+
+  // saída do código
+
+  item1 = 200
+item2 = 400
+item3 = 600
+
+discount = calculate_discount(item1, item2, item3)
+print("Discount amount:", discount)
+
+  //saída
+  Discount amount: 300.0
